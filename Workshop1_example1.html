@@ -5,19 +5,103 @@
 		<title>Workshop 1</title>
 		<!-- script tag is where Javascript goes to -->
 		<script>
-			window.alert("Hello World")
-			window.alert("Mites tää?")
-			for(var i = 0; i < 400; i++) {
-				console.log("This round is " + i);
-			}
-		</script>
+	//		window.alert("Hello World")
+	//		window.alert("Mites tää?")
+	//		document.write("Suoraan sivulle.")
+			
+		//	for(var i = 0; i < 400; i++) {
+		//		console.log("This round is " + i);
+	//	console.log(areYouOldEnough(19));
 
+	/*		var arr = [];
+				for (var i=0; i<15; i++) {
+    				arr.push( Math.floor((Math.random() *100) +1 ));
+			console.log(arr[i]);
+			
+			document.write("<li>" + arr[i] + "</li>");
+			}
+			
+
+			function areYouOldEnough(age) {
+				if (age < 18) {
+					console.log("Alaikäinen! Ikä on " + age);
+					return false;	
+				} else {
+					console.log("Täysi-ikäinen! Ikä on " + age);
+					return true;
+				}
+
+
+			} */
+	//		document.write(areYouOldEnough(15));
+
+	//		alert(areYouOldEnough(19));
+	//		alert(areYouOldEnough(15));
+
+			var persons = [
+				{
+ 					firstName:"John",
+ 					lastName:"Doe",
+ 					age:50,
+ 					eyeColor:"blue",
+					address: "Main Street",
+					telephone: 1800555555,
+					printInfo: function() {return(this.firstName + " " + this.lastName + ", age " + this.age + ", eyes " + this.eyeColor + ", address " + this.address + " and phonenumber " + this.telephone )}
+			},
+			{
+				firstName:"Robert",
+				lastName:"Shaw",
+				age:75,
+				eyeColor:"brown",
+				address: "Lafayette Street",
+				telephone: "555-5555",
+				printInfo: function() {return(this.firstName + " " + this.lastName + ", age " + this.age + ", eyes " + this.eyeColor + ", address " + this.address + " and phonenumber " + this.telephone )}
+			},
+			{	firstName:"Samuel",
+				lastName:"Jackson",
+				age:35,
+				eyeColor:"green",
+				address: "Elm Street",
+				telephone: "1-800-MTHFKR",
+				printInfo: function() {return(this.firstName + " " + this.lastName + ", age " + this.age + ", eyes " + this.eyeColor + ", address " + this.address + " and phonenumber " + this.telephone )}
+		},
+		{
+				firstName:"Jane",
+				lastName:"Seymour",
+				age:64,
+				eyeColor:"gray",
+				address: "Mercer",
+				telephone: "070544860",
+				printInfo: function() {return(this.firstName + " " + this.lastName + ", age " + this.age + ", eyes " + this.eyeColor + ", address " + this.address + " and phonenumber " + this.telephone )}
+		},
+		{	
+				firstName:"Jason",
+				lastName:"Vorhees",
+				age:150,
+				eyeColor:"black",
+				address: "Crystal Lake",
+				telephone: "666-666",
+				printInfo: function() {return(this.firstName + " " + this.lastName + ", age " + this.age + ", eyes " + this.eyeColor + ", address " + this.address + " and phonenumber " + this.telephone )}
+		}
+	]	
+		var text = "Nimi<br>";
+		for(i=0; i<persons.length; i++) {
+			text +=persons[i].firstName + " " + persons[i].lastName + "<br>";
+
+		}
+
+		document.write(text);
+		//	console.log(person.printInfo());
+			
+		</script>
+	
 	</head>
 
 	<body>
 		<h1>Welcome to example page</h1>
 		<p> Lorem ipsum dolorem...   </p>
 
+	
 	</body>
 
 </html>
