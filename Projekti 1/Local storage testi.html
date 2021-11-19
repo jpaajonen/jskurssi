@@ -9,44 +9,9 @@
 
 <body>
     <script>
+        //   document.addEventListener('DOMContentLoaded', getData());
         var arr = new Array();
-        function addData() {
-//            getData();     
-            arr.push({
-                taskId:document.getElementById("taskId").innerText
-            });
 
-            localStorage.setItem("localData", JSON.stringify(arr));
- //           showData();
-
-        }
-
-        function getData() {
-            var str = localStorage.getItem("localData");
-
-            if (str != null) {
-                arr = JSON.parse(str);
-            }
-        }
- //       function deleteData() {
- //           localStorage.clear()
- //       }
-
-        function showData(){
-            getData();
-            var table = document.getElementById("tbody");
-
-            var x = table.rows.length;
-            while (--x) {
-                table.deleteRow(x);
-            }
-
-            for (i = 0; i < arr.length; i++) {         
-                var row = table.insertRow(-1);
-                var cell = row.insertCell(0);
-                cell.innerHTML = arr[i].taskId;
-            }
-        }
 
         function addTask() {
             var table = document.getElementById("tbody");
@@ -62,6 +27,11 @@
                 cell.onclick = function uncheck() {
                     row.style = "text-decoration: none"
                 }
+                arr.push({
+                    taskID: document.getElementById("tekstikentta").value
+                });
+                localStorage.setItem("localData", JSON.stringify(arr));
+
                 cell.innerHTML = field.value;
             }
             field.value = "";
@@ -74,7 +44,7 @@
             valinta.name = "cbox";
             valinta.id = "cb";
             cell2.appendChild(valinta);
-            addData();
+
         }
 
         function removeTask() {
@@ -84,16 +54,47 @@
                 var row = table.rows[i];
                 var cb = row.cells[1].getElementsByTagName("input")[0];
                 if ("checkbox" == cb.type && true == cb.checked) {
+                    arr.splice(i, 1);
+                    localStorage.setItem("localData", JSON.stringify(arr));
                     table.deleteRow(i);
                     i--;
+
                 }
             }
         }
 
 
+                /*       function addData() {  
+                   arr.push({
+                       taskId:document.getElementById("taskId").innerText
+                   });
+       
+                   localStorage.setItem("localData", JSON.stringify(arr));
+               }
+       
+        function getData() {
+            var str = localStorage.getItem("localData");
+            alert(str);
+            if (str) {
+                arr = JSON.parse(str);
+            }
+        }
+
+        function showData() {
+            //            getData();
+            var table = document.getElementById("tbody");
+        }
+
+        for (i = 0; i < arr.length; i++) {
+            var row = table.insertRow(-1);
+            var cell = row.insertCell(0);
+            cell.innerHTML = arr[i].taskId;
+        }
+*/
 
 
-</script>
+
+    </script>
 
     <table id="ToDoListTable" width="400px" border="1">
         <thead>
@@ -117,4 +118,5 @@
     </p>
 
 </body>
+
 </html>
